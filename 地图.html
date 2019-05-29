@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="js/echarts.min.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="main" style="width: 1200px;height:600px;"></div>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+   let myChart = echarts.init(document.getElementById('main'))
+    $.get('data/广东省.json', function (geoJson) {
+
+        myChart.hideLoading();
+
+        echarts.registerMap('广东', geoJson);
+
+        myChart.setOption(option = {
+            title: {
+                text: '',
+                subtext: '数据来源于广东省民政局',
+
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: '{b}<br/>{c}'
+            },
+            toolbox: {
+                show: true,
+                orient: 'vertical',
+                left: 'right',
+                top: 'center',
+                feature: {
+                    dataView: {readOnly: false},
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            visualMap: {
+                min: 10,
+                max: 500,
+                text:['High','Low'],
+                realtime: false,
+                calculable: true,
+                inRange: {
+                    color: ['#ffffff','#6dd5fa','#2980b9'
+
+
+
+    ]
+                }
+            },
+            series: [
+                {
+                    name: '香港18区人口密度',
+                    type: 'map',
+                    mapType: '广东', // 自定义扩展图表类型
+                    itemStyle:{
+                        normal:{label:{show:true}},
+                        emphasis:{label:{show:true}}
+                    },
+                    data:[
+                        {name: '广州市', value: 31.00},
+                        {name: '珠海市', value: 42.00},
+                        {name: '汕头市', value: 369.40},
+                        {name: '南澳县', value: 54.56},
+                        {name: '佛山市', value: 4.00},
+                        {name: '韶关市', value: 458.84},
+                        {name: '南雄市', value: 76.56},
+                        {name: '乳源瑶族自治县', value: 69.56},
+                        {name: '翁源县', value: 48.24},
+                        {name: '河源市', value: 144.24},
+                        {name: '龙川县', value: 187.56},
+                        {name: '连平县', value: 94.56},
+                        {name: '梅州市', value: 343.28},
+                        {name: '紫金县', value: 94.56},
+                        {name: '兴宁市', value: 107.24},
+                        {name: '惠州市', value: 106.72},
+                        {name: '汕尾市', value: 190.68},
+                        {name: '陆丰市', value: 205.12},
+                        {name: '东莞市', value: 3.00},
+                        {name: '中山市', value: 15.00},
+                        {name: '江门市', value: 457.60},
+                        {name: '阳江市', value: 211.36},
+                        {name: '阳春市', value: 68.24},
+                        {name: '湛江市', value: 715.16},
+                        {name: '廉江市', value: 199.12},
+                        {name: '雷州市', value: 160.56},
+                        {name: '茂名市', value: 327.36},
+                        {name: '高州市', value: 88.56},
+                        {name: '化州市', value: 114.12},
+                        {name: '肇庆市', value: 26.36},
+                        {name: '清远市', value: 460.48},
+                        {name: '英德市', value: 92.68},
+                        {name: '潮州市', value: 194.36},
+                        {name: '揭阳市', value: 286.68},
+                        {name: '普宁市', value: 155.12},
+                        {name: '云浮市', value: 228.92},
+                        {name: '罗定市', value: 143.68}
+
+                    ],
+
+                }
+            ]
+        });
+    });
+    myChart.setOption(option);
+</script>
+
+</body>
+</html>
