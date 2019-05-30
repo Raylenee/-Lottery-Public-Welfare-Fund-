@@ -1,0 +1,30 @@
+p{
+    text-indent:20px;
+    line-height:3em;
+    text-align: left;
+}
+h5{
+    color: #d48265;
+    text-align: left;
+    font-weight: bold;
+}
+#title h4{
+    color: #c23531;
+    font-weight: bold;
+}
+.content1{
+    text-align: center;
+}
+.content1 img{
+    zoom:50%;
+}
+
+.content1 p span{
+    color: #c23531;
+    font-weight: bold;
+}
+
+.point{
+    color:#d48265;
+    font-weight: bold;
+}
