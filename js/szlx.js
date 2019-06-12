@@ -1,13 +1,10 @@
 // 基于准备好的dom，初始化echarts实例
-let myChart = echarts.init(document.getElementById('bar'));
-var dom = document.getElementById("container");
-var myChart = echarts.init(dom);
+var myChart5 = echarts.init(document.getElementById("szlx"));
 var app = {};
 option = null;
 app.title = '嵌套环形图';
 
 option = {
-   backgroundColor:'rgba(128, 128, 128, 0.1)' ,
     tooltip: {
         trigger: 'item',
         formatter: "{a} <br/>{b}: {c} ({d}%)"
@@ -42,7 +39,7 @@ option = {
                 {value:906, name:'其他类'},
                 {value:95.85, name:'基建类'},
                 {value:70.8, name:'社区类服务'}
-                
+
             ]
         },
         {
@@ -107,4 +104,5 @@ option = {
     ]
 };;
 if (option && typeof option === "object") {
-    myChart.setOption(option, true);
+    myChart5.setOption(option, true);
+}
