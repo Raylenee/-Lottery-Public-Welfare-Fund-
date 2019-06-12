@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 // 基于准备好的dom，初始化echarts实例
-let myChart = echarts.init(document.getElementById('bar'));
+let myChart4 = echarts.init(document.getElementById('bar'));
 var dom = document.getElementById("container");
 var myChart = echarts.init(dom);
 var app = {};
